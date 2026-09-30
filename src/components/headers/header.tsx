@@ -1,8 +1,9 @@
-import type { PropsWithChildren } from "react";
+import { cn } from "@/lib/utils";
+import type { HTMLAttributes } from "react";
 
-export function HeaderBase({ children }: PropsWithChildren) {
+export function HeaderBase({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
-		<header>
+		<header className={cn("", className)} {...props}>
 			{ children }
 		</header>
 	)
