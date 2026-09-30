@@ -3,8 +3,7 @@ import type { HTMLAttributes } from "react";
 
 export function MainBase({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
-		<main className={cn("", className)} {...props}>
-			<h1>Main</h1>
+		<main className={cn("p-4 min-h-svh", className)} {...props}>
 			{ children }
 		</main>
 	)
