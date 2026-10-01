@@ -1,15 +1,24 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { HeaderBase } from './components/headers';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HeaderBase, HeaderBaseContent, HeaderBaseIcon } from './components/headers';
 import { MainBase } from './components/mains';
 import { FooterBase } from './components/footers';
 import { App } from './App';
 import { Outlet } from "react-router";
+import { PlaceholderImage } from './components/placeholders';
+import { LinkBasic } from './components/link';
 
 function Wrapper() {
 	return (
 		<>
 			<HeaderBase>
-				<h1>Header</h1>
+				<HeaderBaseIcon>
+					<PlaceholderImage x={32} y={32} />
+				</HeaderBaseIcon>
+				<HeaderBaseContent>
+					{Array.from({length: 5}).map(x =>
+						<LinkBasic href="/">Lorem </LinkBasic>
+					)}
+				</HeaderBaseContent>
 			</HeaderBase>
 			<MainBase>
 				<Outlet />
