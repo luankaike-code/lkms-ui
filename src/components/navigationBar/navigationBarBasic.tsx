@@ -1,9 +1,8 @@
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from "react";
 import { LinkBasic } from "../link";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
-import { Ham, Menu } from "lucide-react";
-import { Button } from "@base-ui/react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import { Menu } from "lucide-react";
 
 type NavigationBarLink ={
 	src: string;
