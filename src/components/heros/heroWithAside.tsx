@@ -3,7 +3,7 @@ import type { HTMLAttributes } from "react";
 
 export function HeroWithAside({children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
-		<section className={cn("flex flex-col md:flex-row gap-8 w-full justify-around", className)} {...props}>
+		<section className={cn("flex flex-col md:flex-row gap-8 w-full justify-between", className)} {...props}>
 			{children}
 		</section>
 	)
