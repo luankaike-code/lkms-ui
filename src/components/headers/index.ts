@@ -1,1 +1,1 @@
-export { HeaderBase, HeaderBaseContent, HeaderBaseIcon } from "./header";
+export { HeaderBase, HeaderBaseContent, HeaderBaseIcon } from "./headerBase";
