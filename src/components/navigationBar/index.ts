@@ -1,3 +1,1 @@
-import { NavigationBarBasic, NavigationBarBasicDesktop } from "./navigationBarBasic";
-
-export { NavigationBarBasic, NavigationBarBasicDesktop };
+export { NavigationBarBasic, NavigationBarBasicDesktop } from "./navigationBarBasic";

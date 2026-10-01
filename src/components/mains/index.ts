@@ -1,3 +1,1 @@
-import { MainBase } from "./mainBase";
-
-export { MainBase }
+export { MainBase } from "./mainBase";

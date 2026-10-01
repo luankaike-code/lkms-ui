@@ -1,3 +1,1 @@
-import { FooterBase } from "./footerBase";
-
-export { FooterBase }
+export { FooterBase } from "./footerBase";

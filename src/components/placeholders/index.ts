@@ -1,3 +1,1 @@
-import { PlaceholderImage } from "./placeholderImage";
-
-export { PlaceholderImage };
+export { PlaceholderImage } from "./placeholderImage";

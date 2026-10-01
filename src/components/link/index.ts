@@ -1,3 +1,1 @@
-import { LinkBasic } from "./linkBasic";
-
-export { LinkBasic };
+export { LinkBasic } from "./linkBasic";
