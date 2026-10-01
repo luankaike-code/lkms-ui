@@ -19,9 +19,9 @@ export function HeroRoadmapBulletItem({children, className, ...props}: HTMLAttri
 
 export function HeroRoadmapBulletItemBullet({children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
-		<div className={cn("flex items-center justify-center aspect-square rounded-full bg-emphasis text-background font-bold size-28", className)} {...props}>
+		<aside className={cn("flex items-center justify-center aspect-square rounded-full bg-emphasis text-background font-bold size-28", className)} {...props}>
 			{ children }
-		</div>
+		</aside>
 	)
 }
 
