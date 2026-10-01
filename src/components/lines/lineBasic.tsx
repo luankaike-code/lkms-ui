@@ -10,14 +10,14 @@ const lineBasicVariants = cva("self-center block border-boder", {
 			left: "border-l-2 boder-l-solid",
 			right: "border-r-2 boder-r-solid",
 		},
-		defaults: {
-			border: "bottom"
-		}
+	},
+	defaultVariants: {
+		border: "bottom"
 	}
 })
 
 export function LineBasic({className, children, border="bottom", ...props}: VariantProps<typeof lineBasicVariants> & HTMLAttributes<HTMLSpanElement>) {
 	return (
-		<span className={cn(cva({border, className}))} {...props} />
+		<span className={cn(lineBasicVariants({border, className}))} {...props} />
 	)
 }
