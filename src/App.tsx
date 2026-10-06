@@ -1,10 +1,16 @@
+import { useRef } from 'react';
 import { HeroRoadmapBullet, HeroRoadmapBulletItem, HeroRoadmapBulletItemArticle, HeroRoadmapBulletItemBullet, HeroWithAside, HeroWithAsideMainContent, HeroWithAsideSecondContent, HeroWithProducts, HeroWithProductsContent, HeroWithProductsHeader } from './components/heros';
 import { LineBasic } from './components/lines';
 import { MainBase } from './components/mains';
 import { PlaceholderImage } from './components/placeholders';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 
+const bulletsArray = [0, 1, 2, 3, 4]
+
 export function App() {
+  const firstItemBullet = useRef<HTMLDivElement>(null)
+  const lastItemBullet = useRef<HTMLDivElement>(null)
+
   return (
 		<MainBase className="gap-8">
 			<HeroWithAside>
@@ -43,15 +49,20 @@ export function App() {
 					))}
 				</HeroWithProductsContent>
 			</HeroWithProducts>
+			
+			<LineBasic border="right" className={"border-emphasis"} to={firstItemBullet} from={lastItemBullet} />
 
-			<HeroRoadmapBullet className="group">
-				{[0, 1, 2, 3, 4].map(x => (
-					<HeroRoadmapBulletItem className="group/item">
-						<div className="flex items-center self-stretch flex-col relative">
-							<HeroRoadmapBulletItemBullet>
+			<HeroRoadmapBullet>
+				{bulletsArray.map((x, i) => (
+					<HeroRoadmapBulletItem>
+						<div className="flex items-center self-stretch flex-col">
+							<HeroRoadmapBulletItemBullet ref={
+								i === 0? firstItemBullet :
+									i === bulletsArray.length-1? lastItemBullet :
+										undefined
+							}>
 								<h1>{2025 - x}</h1>
 							</HeroRoadmapBulletItemBullet>
-							<LineBasic border="left" className="border-emphasis absolute min-h-60 h-[100%] -z-50 top-1/6 group-last/item:hidden" />
 						</div>
 						<HeroRoadmapBulletItemArticle>
 							<Card>
