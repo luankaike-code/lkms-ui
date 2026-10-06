@@ -20,9 +20,7 @@ function Wrapper() {
 					)}
 				</HeaderBaseContent>
 			</HeaderBase>
-			<MainBase>
-				<Outlet />
-			</MainBase>
+			<Outlet />
 			<FooterBase>
 					<h1>Footer</h1>
 			</FooterBase>
