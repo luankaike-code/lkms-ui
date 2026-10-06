@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import type { HTMLAttributes } from "react";
+import { type HTMLAttributes, forwardRef } from "react";
 
 export function HeroRoadmapBullet({children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
@@ -17,13 +17,13 @@ export function HeroRoadmapBulletItem({children, className, ...props}: HTMLAttri
 	)
 }
 
-export function HeroRoadmapBulletItemBullet({children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
+export const HeroRoadmapBulletItemBullet = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({children, className, ...props}, ref) => {
 	return (
-		<aside className={cn("flex items-center justify-center aspect-square rounded-full bg-emphasis text-background font-bold size-28", className)} {...props}>
+		<aside ref={ref} className={cn("flex items-center justify-center aspect-square rounded-full bg-emphasis text-background font-bold size-28", className)} {...props}>
 			{ children }
 		</aside>
 	)
-}
+})
 
 export function HeroRoadmapBulletItemArticle({children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
