@@ -27,7 +27,7 @@ function Wrapper() {
 					<PlaceholderImage x={32} y={32} />
 				</HeaderBaseIcon>
 				<HeaderBaseContent>
-					{Array.from({length: 5}).map(x =>
+					{Array.from({length: 5}).map(_ =>
 						<LinkBasic href="/">Lorem </LinkBasic>
 					)}
 				</HeaderBaseContent>
