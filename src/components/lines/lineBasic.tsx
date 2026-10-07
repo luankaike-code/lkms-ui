@@ -19,7 +19,7 @@ const lineBasicVariants = cva("self-center z-50 inline-block border-boder", {
 type ReactElement = RefObject<HTMLElement | null>
 
 export function LineBasic({className, children, to, from, border="bottom", ...props}: {to?: ReactElement, from?: ReactElement} & VariantProps<typeof lineBasicVariants> & HTMLAttributes<HTMLSpanElement>) {
-	let [style, setStyle] = useState<CSSProperties>({})
+	const [style, setStyle] = useState<CSSProperties>({})
 	const [windowSize, setWindowSize] = useState({
 		width: typeof window !== 'undefined' ? window.innerWidth : 0,
 		height: typeof window !== 'undefined' ? window.innerHeight : 0,
@@ -68,6 +68,8 @@ export function LineBasic({className, children, to, from, border="bottom", ...pr
 	}, [to, from, windowSize])
 
 	return (
-		<span style={style} className={cn(lineBasicVariants({border, className}))} {...props} />
+		<span style={style} className={cn(lineBasicVariants({border, className}))} {...props}>
+			{children}
+		</span>
 	)
 }
