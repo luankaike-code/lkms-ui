@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useEffect, useState, type CSSProperties, type HTMLAttributes, type RefObject } from "react";
+import { useCallback, useEffect, useRef, type HTMLAttributes, type RefObject } from "react";
 
 const lineBasicVariants = cva("self-center z-50 inline-block border-boder", {
 	variants: {
@@ -19,31 +19,10 @@ const lineBasicVariants = cva("self-center z-50 inline-block border-boder", {
 type ReactElement = RefObject<HTMLElement | null>
 
 export function LineBasic({className, children, to, from, border="bottom", ...props}: {to?: ReactElement, from?: ReactElement} & VariantProps<typeof lineBasicVariants> & HTMLAttributes<HTMLSpanElement>) {
-	const [style, setStyle] = useState<CSSProperties>({})
-	const [windowSize, setWindowSize] = useState({
-		width: typeof window !== 'undefined' ? window.innerWidth : 0,
-		height: typeof window !== 'undefined' ? window.innerHeight : 0,
-	});
-	
-	useEffect(() => {
-		const handleResize = () => {
-			setWindowSize({
-				width: window.innerWidth,
-				height: window.innerHeight,
-			});
-		};
-		
-		window.addEventListener('resize', handleResize);
-		window.addEventListener('load', handleResize);
+	const selfRef = useRef<HTMLSpanElement>(null)
 
-		return () => {
-			window.removeEventListener('resize', handleResize);
-			window.addEventListener('load', handleResize);
-		}
-	}, [])
-
-	useEffect(() => {
-		if(to?.current == null || from?.current == null)
+	const UpdateStyle = useCallback(() => {
+		if(to?.current == null || from?.current == null || selfRef.current == null)
 			return
 
 		const toRect = to.current.getBoundingClientRect()
@@ -60,19 +39,25 @@ export function LineBasic({className, children, to, from, border="bottom", ...pr
 
 		const angle = (Math.atan2(deltaY, deltaX) * 180 / Math.PI) - 90;
 
-		const newStyle: CSSProperties = {}
+		selfRef.current.style.position = "absolute"
+		selfRef.current.style.top = `${toY}px`
+		selfRef.current.style.left = `${toX}px`
+		selfRef.current.style.height = `${distance}px`
+		selfRef.current.style.transform = `rotate(${angle}deg)`
+	}, [from, to, selfRef])
 
-		newStyle.position = "absolute"
-		newStyle.top = toY
-		newStyle.left = toX
-		newStyle.height = `${distance}px`
-		newStyle.transform = `rotate(${angle}deg)`
+	useEffect(() => {
+		window.addEventListener('resize', UpdateStyle);
+		window.addEventListener('load', UpdateStyle);
 
-		setStyle(newStyle)
-	}, [to, from, windowSize])
+		return () => {
+			window.removeEventListener('resize', UpdateStyle);
+			window.addEventListener('load', UpdateStyle);
+		}
+	}, [UpdateStyle])
 
 	return (
-		<span style={style} className={cn(lineBasicVariants({border, className}))} {...props}>
+		<span ref={selfRef} className={cn(lineBasicVariants({border, className}))} {...props}>
 			{children}
 		</span>
 	)
