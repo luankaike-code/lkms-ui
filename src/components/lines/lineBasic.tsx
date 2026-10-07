@@ -34,8 +34,12 @@ export function LineBasic({className, children, to, from, border="bottom", ...pr
 		};
 		
 		window.addEventListener('resize', handleResize);
+		window.addEventListener('load', handleResize);
 
-		return () => window.removeEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+			window.addEventListener('load', handleResize);
+		}
 	}, [])
 
 	useEffect(() => {
@@ -56,7 +60,7 @@ export function LineBasic({className, children, to, from, border="bottom", ...pr
 
 		const angle = (Math.atan2(deltaY, deltaX) * 180 / Math.PI) - 90;
 
-		let newStyle: CSSProperties = {}
+		const newStyle: CSSProperties = {}
 
 		newStyle.position = "absolute"
 		newStyle.top = toY
