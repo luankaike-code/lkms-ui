@@ -1,0 +1,1 @@
+export { LinkBasic } from "./linkBasic";
