@@ -11,7 +11,7 @@ export function FooterBasic({ children, className, ...props}: HTMLAttributes<HTM
 
 export function FooterBasicCopyright({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
-		<p className={cn("text-ring text-center", className)} {...props}>
+		<p className={cn("text-muted text-center", className)} {...props}>
 			{ children }
 		</p>
 	)
