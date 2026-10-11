@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { HeroRoadmapBullet, HeroRoadmapBulletItem, HeroRoadmapBulletItemArticle, HeroRoadmapBulletItemBullet, HeroWithAside, HeroWithAsideMainContent, HeroWithAsideSecondContent, HeroWithProducts, HeroWithProductsContent, HeroWithProductsHeader } from './components/heros';
+import { HeroFeature, HeroFeatureSuperTitle, HeroFeatureTitle, HeroRoadmapBullet, HeroRoadmapBulletItem, HeroRoadmapBulletItemArticle, HeroRoadmapBulletItemBullet, HeroWithAside, HeroWithAsideMainContent, HeroWithAsideSecondContent, HeroWithProducts, HeroWithProductsContent, HeroWithProductsHeader } from './components/heros';
 import { LineBasic } from './components/lines';
 import { MainBasic } from './components/mains';
 import { PlaceholderImage } from './components/placeholders';
@@ -51,6 +51,16 @@ export function App() {
 			</HeroWithProducts>
 			
 			<LineBasic border="right" className={"border-emphasis"} to={firstItemBullet} from={lastItemBullet} />
+
+			<HeroFeature className="my-24">
+				<HeroFeatureSuperTitle>
+					Isso é íncrivel
+				</HeroFeatureSuperTitle>
+				<HeroFeatureTitle>
+					Faça isso e tenha tudo de graça
+				</HeroFeatureTitle>
+				<div className="block w-full h-96 bg-gray-300 shadow-2xl shadow-emphasis rounded-2xl" />
+			</HeroFeature>
 
 			<HeroRoadmapBullet>
 				{bulletsArray.map((x, i) => (
