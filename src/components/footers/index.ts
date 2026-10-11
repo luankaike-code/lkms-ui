@@ -1,1 +1,1 @@
-export { FooterBase, FooterBaseMain, FooterBaseMainContent, FooterBaseMainContentSection, FooterBaseMainContentSectionItem, FooterBaseCopyright, FooterBaseMainContentSectionTitle, FooterBaseMainIcon } from "./footerBase";
+export { FooterBasic, FooterBasicMain, FooterBasicMainContent, FooterBasicMainContentSection, FooterBasicMainContentSectionItem, FooterBasicCopyright, FooterBasicMainContentSectionTitle, FooterBasicMainIcon } from "./footerBasic";

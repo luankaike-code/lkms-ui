@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { HeroRoadmapBullet, HeroRoadmapBulletItem, HeroRoadmapBulletItemArticle, HeroRoadmapBulletItemBullet, HeroWithAside, HeroWithAsideMainContent, HeroWithAsideSecondContent, HeroWithProducts, HeroWithProductsContent, HeroWithProductsHeader } from './components/heros';
 import { LineBasic } from './components/lines';
-import { MainBase } from './components/mains';
+import { MainBasic } from './components/mains';
 import { PlaceholderImage } from './components/placeholders';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 
@@ -12,7 +12,7 @@ export function App() {
   const lastItemBullet = useRef<HTMLDivElement>(null)
 
   return (
-		<MainBase className="gap-8">
+		<MainBasic className="gap-8">
 			<HeroWithAside>
 				<HeroWithAsideMainContent>
 					<h1>bla bla bal bal</h1>
@@ -82,7 +82,7 @@ export function App() {
 					</HeroRoadmapBulletItem>
 				))}
 			</HeroRoadmapBullet>
-		</MainBase>
+		</MainBasic>
   )
 }
 

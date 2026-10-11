@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from "react";
 
-export function FooterBase({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
+export function FooterBasic({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
 		<footer className={cn("border-t-solid border-t-2 border-border pb-1 pt-4 md:pt-2 px-4", className)} {...props}>
 			{ children }
@@ -9,7 +9,7 @@ export function FooterBase({ children, className, ...props}: HTMLAttributes<HTML
 	)
 }
 
-export function FooterBaseCopyright({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
+export function FooterBasicCopyright({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
 		<p className={cn("text-ring text-center", className)} {...props}>
 			{ children }
@@ -17,7 +17,7 @@ export function FooterBaseCopyright({ children, className, ...props}: HTMLAttrib
 	)
 }
 
-export function FooterBaseMain({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
+export function FooterBasicMain({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
 		<main className={cn("flex flex-col-reverse gap-8 justify-between items-center md:flex-row", className)} {...props}>
 			{ children }
@@ -25,7 +25,7 @@ export function FooterBaseMain({ children, className, ...props}: HTMLAttributes<
 	)
 }
 
-export function FooterBaseMainIcon({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
+export function FooterBasicMainIcon({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
 		<aside className={cn("flex justify-center items-center p-4", className)} {...props}>
 			{ children }
@@ -33,7 +33,7 @@ export function FooterBaseMainIcon({ children, className, ...props}: HTMLAttribu
 	)
 }
 
-export function FooterBaseMainContent({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
+export function FooterBasicMainContent({ children, className, ...props}: HTMLAttributes<HTMLDivElement>) {
 	return (
 		<section className={cn("flex flex-col md:flex-row gap-4 md:gap-24", className)} {...props}>
 			{ children }
@@ -41,7 +41,7 @@ export function FooterBaseMainContent({ children, className, ...props}: HTMLAttr
 	)
 }
 
-export function FooterBaseMainContentSection({ children, className, ...props}: HTMLAttributes<HTMLUListElement>) {
+export function FooterBasicMainContentSection({ children, className, ...props}: HTMLAttributes<HTMLUListElement>) {
 	return (
 		<ul className={cn("", className)} {...props}>
 			{ children }
@@ -49,7 +49,7 @@ export function FooterBaseMainContentSection({ children, className, ...props}: H
 	)
 }
 
-export function FooterBaseMainContentSectionTitle({ children, className, ...props}: HTMLAttributes<HTMLHeadingElement>) {
+export function FooterBasicMainContentSectionTitle({ children, className, ...props}: HTMLAttributes<HTMLHeadingElement>) {
 	return (
 		<h1 className={cn("font-black text-xl", className)} {...props}>
 			{ children }
@@ -57,7 +57,7 @@ export function FooterBaseMainContentSectionTitle({ children, className, ...prop
 	)
 }
 
-export function FooterBaseMainContentSectionItem({ children, className, ...props}: HTMLAttributes<HTMLLIElement>) {
+export function FooterBasicMainContentSectionItem({ children, className, ...props}: HTMLAttributes<HTMLLIElement>) {
 	return (
 		<li className={cn("", className)} {...props}>
 			{ children }

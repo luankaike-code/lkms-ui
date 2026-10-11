@@ -1,1 +1,1 @@
-export { MainBase } from "./mainBase";
+export { MainBasic } from "./mainBasic";

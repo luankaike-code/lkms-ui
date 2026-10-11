@@ -1,55 +1,55 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HeaderBase, HeaderBaseContent, HeaderBaseIcon } from './components/headers';
+import { HeaderBasic, HeaderBasicContent, HeaderBasicIcon } from './components/headers';
 import { App } from './App';
 import { Outlet } from "react-router";
 import { PlaceholderImage } from './components/placeholders';
 import { LinkBasic } from './components/link';
-import { FooterBaseMainContent, FooterBaseMainContentSection, FooterBaseMainContentSectionItem, FooterBaseMainContentSectionTitle, FooterBase, FooterBaseMain, FooterBaseCopyright, FooterBaseMainIcon } from './components/footers';
+import { FooterBasicMainContent, FooterBasicMainContentSection, FooterBasicMainContentSectionItem, FooterBasicMainContentSectionTitle, FooterBasic, FooterBasicMain, FooterBasicCopyright, FooterBasicMainIcon } from './components/footers';
 
 function FTSection() {
 	return (
-		<FooterBaseMainContentSection>
-			<FooterBaseMainContentSectionTitle>Title1</FooterBaseMainContentSectionTitle>
-			<FooterBaseMainContentSectionItem>item1</FooterBaseMainContentSectionItem>
-			<FooterBaseMainContentSectionItem>item2</FooterBaseMainContentSectionItem>
-			<FooterBaseMainContentSectionItem>item3</FooterBaseMainContentSectionItem>
-			<FooterBaseMainContentSectionItem>item4</FooterBaseMainContentSectionItem>
-			<FooterBaseMainContentSectionItem>item5</FooterBaseMainContentSectionItem>
-		</FooterBaseMainContentSection>
+		<FooterBasicMainContentSection>
+			<FooterBasicMainContentSectionTitle>Title1</FooterBasicMainContentSectionTitle>
+			<FooterBasicMainContentSectionItem>item1</FooterBasicMainContentSectionItem>
+			<FooterBasicMainContentSectionItem>item2</FooterBasicMainContentSectionItem>
+			<FooterBasicMainContentSectionItem>item3</FooterBasicMainContentSectionItem>
+			<FooterBasicMainContentSectionItem>item4</FooterBasicMainContentSectionItem>
+			<FooterBasicMainContentSectionItem>item5</FooterBasicMainContentSectionItem>
+		</FooterBasicMainContentSection>
 	)
 }
 
 function Wrapper() {
 	return (
 		<>
-			<HeaderBase>
-				<HeaderBaseIcon>
+			<HeaderBasic>
+				<HeaderBasicIcon>
 					<PlaceholderImage x={32} y={32} />
-				</HeaderBaseIcon>
-				<HeaderBaseContent>
+				</HeaderBasicIcon>
+				<HeaderBasicContent>
 					{Array.from({length: 5}).map(_ =>
 						<LinkBasic href="/">Lorem </LinkBasic>
 					)}
-				</HeaderBaseContent>
-			</HeaderBase>
+				</HeaderBasicContent>
+			</HeaderBasic>
 			<Outlet />
-			<FooterBase>
-				<FooterBaseMain>
-					<FooterBaseMainIcon>
+			<FooterBasic>
+				<FooterBasicMain>
+					<FooterBasicMainIcon>
 						<PlaceholderImage x={200} y={200} />
-					</FooterBaseMainIcon>
-					<FooterBaseMainContent>
+					</FooterBasicMainIcon>
+					<FooterBasicMainContent>
 						<FTSection />
 						<FTSection />
 						<FTSection />
 						<FTSection />
 						<FTSection />
-					</FooterBaseMainContent>
-				</FooterBaseMain>
-				<FooterBaseCopyright>
+					</FooterBasicMainContent>
+				</FooterBasicMain>
+				<FooterBasicCopyright>
 					© 2026 Luan Mack. All rights reserved.
-				</FooterBaseCopyright>
-			</FooterBase>
+				</FooterBasicCopyright>
+			</FooterBasic>
 		</>
 	)
 }
